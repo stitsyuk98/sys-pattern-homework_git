@@ -6,7 +6,7 @@
 
 *Приведите скриншот systemctl status prometheus, где будет написано: prometheus.service — Prometheus Service Netology Lesson 9.4 — [Ваши ФИО].*
 
-![Задание1](Задание1.PNG)
+![Задание1](задание1.PNG)
 
 ---
 
@@ -16,7 +16,7 @@
 
 *Приведите скриншот systemctl status node-exporter, где будет написано: node-exporter.service — Node Exporter Netology Lesson 9.4 — [Ваши ФИО].*
 
-![Задание2](Задание2.PNG)
+![Задание2](задание2.PNG)
 
 ---
 
@@ -27,8 +27,8 @@
 *Приложите скриншот конфига из интерфейса Prometheus вкладки Status > Configuration.*
 *Приложите скриншот из интерфейса Prometheus вкладки Status > Targets, чтобы было видно минимум два эндпоинта.*
 
-![Задание3_1](Задание3_1.PNG)
-![Задание3_2](Задание3_2.PNG)
+![Задание3_1](задание3_1.PNG)
+![Задание3_2](задание3_2.PNG)
 
 ---
 ## Дополнительные задания со звёздочкой*
