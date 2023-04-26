@@ -94,3 +94,5 @@ $ rabbitmqadmin get queue='hello'
 
 *Готовый плейбук разместите в своём репозитории.*
 
+полезные ссылки
+https://www.youtube.com/watch?v=o41tiIUH_DU
