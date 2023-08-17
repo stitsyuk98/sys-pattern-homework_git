@@ -1,0 +1,5 @@
+INSERT INTO clients(second_name, country) VALUES ('Иванов Иван Иванович', 'USA');
+INSERT INTO clients (second_name, country) VALUES ('Петров Петр Петрович', 'Canada');
+INSERT INTO clients (second_name, country, orders) VALUES ('Иоганн Себастьян Бах', 'Japan', 1);
+INSERT INTO clients (second_name, country, orders) VALUES ('Ронни Джеймс Дио', 'Russia', 2);
+INSERT INTO clients (second_name, country, orders) VALUES ('Ritchie Blackmore', 'Russia', 3);
