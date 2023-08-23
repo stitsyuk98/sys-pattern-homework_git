@@ -75,16 +75,38 @@ SHOW GRANTS FOR 'test'@'%';
 Используя таблицу INFORMATION_SCHEMA.USER_ATTRIBUTES, получите данные по пользователю `test` и 
 **приведите в ответе к задаче**.
 
+![Задание3](Снимок7.PNG)
+
 ## Задача 3
 
 Установите профилирование `SET profiling = 1`.
 Изучите вывод профилирования команд `SHOW PROFILES;`.
 
+![Задание3](Снимок8.PNG)
+
 Исследуйте, какой `engine` используется в таблице БД `test_db` и **приведите в ответе**.
+
+```
+SELECT table_name, table_schema, engine
+FROM information_schema.tables
+WHERE table_schema = 'test_db';
+```
 
 Измените `engine` и **приведите время выполнения и запрос на изменения из профайлера в ответе**:
 - на `MyISAM`,
 - на `InnoDB`.
+
+```
+SELECT * FROM orders WHERE price > 300;
+
+SHOW PROFILES WHERE Query='select * from orders where price > 300';
+```
+
+![Задание3](Снимок9.PNG)
+
+![Задание3](Снимок10.PNG)
+
+![Задание3](Снимок11.PNG)
 
 ## Задача 4 
 
@@ -99,12 +121,4 @@ SHOW GRANTS FOR 'test'@'%';
 - размер файла логов операций 100 Мб.
 
 Приведите в ответе изменённый файл `my.cnf`.
-
----
-
-### Как оформить ДЗ
-
-Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
-
----
 
