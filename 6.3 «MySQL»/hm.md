@@ -122,3 +122,27 @@ SHOW PROFILES WHERE Query='select * from orders where price > 300';
 
 Приведите в ответе изменённый файл `my.cnf`.
 
+```
+[mysqld]
+pid-file        = /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
+datadir         = /var/lib/mysql
+secure-file-priv= NULL
+
+# Custom config should go here
+!includedir /etc/mysql/conf.d/
+
+# Netology
+# Размер буфера кеширования 30% от размера оперативки в 8 Гб, кратный innodb_buffer_pool_chunk_size=128M
+innodb_buffer_pool_size = 2560M
+# Размер файла лога операций (общий размер логов равен innodb_log_file_size*2)
+innodb_log_file_size = 100M
+# Размер буфера для незакоммиченных транзакций
+innodb_log_buffer_size = 1M
+# Таблицы хранятся в отдельных файлах для компрессии таблиц
+innodb_file_per_table = 1
+innodb_file_format = Barracuda
+# Производительность I/O операций (по умолчанию 200)
+innodb_io_capacity = 1000
+innodb_flush_log_at_trx_commit = 2
+```
