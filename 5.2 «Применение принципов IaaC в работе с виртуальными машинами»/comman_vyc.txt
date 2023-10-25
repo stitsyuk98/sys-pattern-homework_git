@@ -1,0 +1,175 @@
+    1  cear
+    2  clear
+    3  wget https://github.com/netology-code/devops-materials
+    4  ls
+    5  apt-get update
+    6  ls -la
+    7  apt install devops-materials
+    8  apt search virtual
+    9  apt search virtualbox
+   10  apt install devops-materials
+   11  dpkg -i devops-materials
+   12  dpkg -h
+   13  dpkg --help
+   14  wget -O "https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Debian~buster_amd64.deb"
+   15  wget -O https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Debian~buster_amd64.deb
+   16  wget -O 'https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Debian~buster_amd64.deb'
+   17  wget -O https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Debian~buster_amd64.deb vbox.deb
+   18  wget https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Debian~buster_amd64.deb vbox.deb
+   19  ls
+   20  wget https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Debian~buster_amd64.deb
+   21  l
+   22  ls
+   23  rm *
+   24  wget https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Debian~bullseye_amd64.deb
+   25  ls
+   26  apt install virtualbox-7.0_7.0.12-159484~Debian~bullseye_amd64.deb
+   27  dpkg -i virtualbox-7.0_7.0.12-159484~Debian~bullseye_amd64.deb
+   28  wget https://hashicorp-releases.yandexcloud.net/vagrant/2.3.7/vagrant_2.3.7-1_amd64.deb
+   29  ls
+   30  dpkg -i vagrant_2.3.7-1_amd64.deb
+   31  sudo apt update
+   32  sudo apt install vim
+   33  sudo apt-get install python3 python3-pip -y
+   34  apt --fix-broken install
+   35  sudo pip3 install ansible
+   36  sudo apt-get install python3 python3-pip -y
+   37  sudo pip3 install ansible
+   38  apt update
+   39  apt upgrade
+   40  apt-get install python3 python3-pip -y
+   41  apt autoremove
+   42  pip3 install ansible
+   43  ansible --version
+   44  wget https://hashicorp-releases.yandexcloud.net/terraform/1.6.0/terraform_1.6.0_linux_amd64.zip
+   45  ls
+   46  apt install unzip
+   47  unzip terraform_1.6.0_linux_amd64.zip
+   48  ls
+   49  dpkg terraform
+   50  dpkg -i terraform
+   51  dpkg terraform_1.6.0_linux_amd64.zip
+   52  dpkg -i terraform_1.6.0_linux_amd64.zip
+   53  dpkg --help
+   54  dpkg --help | grep zip
+   55  pwd
+   56  ls
+   57  mkdir terra
+   58  cp terraform terra/terraform
+   59  ls terra
+   60  export PATH=$PATH:/terra/terraform
+   61  terraform -v
+   62  wget https://releases.hashicorp.com/terraform/1.1.7/terraform_1.1.7_linux_amd64.zip
+   63  mv terraform /usr/local/bin/
+   64  terraform -version
+   65  wget https://github.com/netology-code/virt-homeworks/archive/refs/heads/virt-11.zip
+   66  ls
+   67  unzip virt-11.zip
+   68  ls
+   69  ls -la
+   70  cd virt-homeworks-virt-11/
+   71  ls
+   72  cd 05-virt-02-iaac/
+   73  ls
+   74  cd src/
+   75  ls
+   76  cd ./
+   77  cd ./..
+   78  cp src ~/
+   79  cp -r src ~/
+   80  cd ~
+   81  ls
+   82  src
+   83  cd src
+   84  ls
+   85  cd vagrant/
+   86  lsl
+   87  ls
+   88  wget https://app.vagrantup.com/bento/boxes/ubuntu-20.04/versions/202309.09.0/providers/virtualbox/unknown/vagrant.box
+   89  ls
+   90  vagrant box add bento/ubuntu-20.04 ./vagrant.box
+   91  vagrant up
+   92  export VAGRANT_DEFAULT_PROVIDER=virtualbox
+   93  vagrant up
+   94  VBoxManage --version
+   95  sudo /sbin/vboxconfig
+   96  sudo apt install linux-headers-generic linux-headers-4.13.0-43-generic
+   97  apt search header
+   98  apt search header | grep linux
+   99  apt install kernel-devel-3.10.0-693.11.1.el7.x86_64
+  100  apt install -y redhat-lsb-core net-tools kernel-headers kernel-devel epel-release
+  101  apt install curl gpg gnupg2 software-properties-common apt-transport-https lsb-release ca-certificates
+  102  curl -fsSL https://www.virtualbox.org/download/oracle_vbox_2016.asc|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/oracle_vbox_2016.gpg
+  103  curl -fsSL https://www.virtualbox.org/download/oracle_vbox.asc|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/oracle_vbox.gpg
+  104  echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+  105  apt update
+  106  apt install linux-headers-$(uname -r) dkms
+  107  apt-get install virtualbox-7.0
+  108  cd ~/
+  109  wget https://download.virtualbox.org/virtualbox/7.0.10/Oracle_VM_VirtualBox_Extension_Pack-7.0.10.vbox-extpack
+  110  VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-*.vbox-extpack
+  111  history
+  112  VBoxManage --version
+  113  virtualbox
+  114  sudo apt-get install dkms build-essential linux-headers-`uname -r`
+  115  sudo apt install -f
+  116  virtualbox
+  117  sudo apt-get install --reinstall virtualbox
+  118  sudo /etc/init.d/vboxdrv setup
+  119  /etc/init.d/vboxdrv setup
+  120  sudo apt-get install dkms build-essential linux-headers-`uname -r`
+  121  apt-get dist-upgrade
+  122  reboot
+  123  virtualbox
+  124  sudo apt-get install linux-headers-$(uname -r)
+  125  virtualbox
+  126  history
+  127  VBoxManage -v
+  128  apt-get install -y virtualbox-guest-x11
+  129  apt-get install linux-headers-generic
+  130  VBoxManage -v
+  131  vagrant reload
+  132  lsb release -a
+  133  lsb _release -a
+  134  lsb_release -a
+  135  apt update
+  136  egrep -c '(vmx|svm)' /proc/cpuinfo
+  137  grep -E -color '(vmx|svm)' /proc/cpuinfo
+  138  echo "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bullseye contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+  139  wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -o- | sudo apt -
+  140  wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -o- | sudo apt-key add -
+  141  wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+  142  apt update
+  143  apt search virtualbox
+  144  apt install virtualbox-6.1
+  145  VBoxManage -V
+  146  LS
+  147  ls
+  148  cd src/
+  149  ls
+  150  cd vagrant/
+  151  ls
+  152  vagrant up
+  153  bcdedit /set hypervisorlaunchtype off
+  154  egrep -c '(vmx|svm)' /proc/cpuinfo
+  155  grep -E --color '(vmx|svm)' /proc/cpuinfo
+  156  sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon
+  157  sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon
+  158  apt install virt-manager
+  159  virsh net-list --all
+  160  virsh net-start default
+  161  vrish net-autostart default
+  162  egrep -c '(vmx|svm)' /proc/cpuinfo
+  163  grep -E --color '(vmx|svm)' /proc/cpuinfo
+  164  vagrant up
+  165  kvm-ok
+  166  sudo apt-get install cpu-checker
+  167  sudo apt-get install cpu-checker
+  168  kvm-ok
+  169  history
+  170  history
+  171  history
+
+
+
+  vb.gui = true
