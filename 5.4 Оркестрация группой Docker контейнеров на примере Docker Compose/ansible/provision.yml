@@ -1,0 +1,108 @@
+---
+
+  - hosts: nodes
+    become: yes
+    become_user: root
+    remote_user: debian
+
+    tasks:
+      - name: Create directory for ssh-keys
+        file: state=directory mode=0700 dest=/root/.ssh/
+
+      - name: Adding rsa-key in /root/.ssh/authorized_keys
+        copy: src=~/.ssh/id_rsa.pub dest=/root/.ssh/authorized_keys owner=root mode=0600
+        ignore_errors: yes
+
+      - name: Checking DNS
+        command: host -t A google.com
+
+      - name: Update apt repositories and cache on server
+        apt:
+          update_cache: yes
+          force_apt_get: yes
+          cache_valid_time: 3600
+
+      - name: Upgrade all packages on server
+        apt:
+          upgrade: dist
+          force_apt_get: yes
+
+      - name: Ensure older versions of docker are uninstalled
+        apt:
+          name:
+            - docker
+            - docker-engine
+            - docker.io
+            - containerd
+            - runc
+          state: absent
+
+      - name: Install packages to allow apt to use a repository over HTTPS
+        apt:
+          name:
+            - ca-certificates
+            - curl
+            - git
+            - gnupg
+            - lsb-release
+          state: latest
+
+      - name: Add Dockers official GPG key
+        shell: |
+          mkdir -p /etc/apt/keyrings
+          curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/trusted.gpg.d/docker.gpg
+
+      - name: Set up the repository
+        shell: |
+          echo \
+          "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/docker.gpg] https://download.docker.com/linux/debian \
+          $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+      - name: Update apt repositories and cache on server 2
+        apt:
+          update_cache: yes
+          force_apt_get: yes
+          cache_valid_time: 3600
+
+      - name: Install the Docker Engine
+        apt:
+          name:
+            - docker-ce
+            - docker-ce-cli
+            - containerd.io
+            - docker-buildx-plugin
+            - docker-compose-plugin
+          state: present
+          update_cache: yes
+        notify:
+          - Start and Enable docker
+
+      - name: Add the current user to the docker group
+        user:
+          name: admin
+          groups: docker
+          append: yes
+
+      - name: Enable docker daemon
+        systemd:
+          name: docker
+          state: started
+          enabled: yes
+
+      - name: Install docker-compose
+        raw: $(curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/bin/docker-compose && chmod +x /usr/bin/docker-compose)
+
+      - name: Synchronization
+        copy:
+          src: stack/
+          dest: "/opt/stack/"
+          owner: root
+          group: root
+          mode: 0644
+        become: true
+
+      - name: Pull all images in compose
+        command: docker-compose -f /opt/stack/docker-compose.yaml pull
+
+      - name: Up all services in compose
+        command: docker-compose -f /opt/stack/docker-compose.yaml up -d
