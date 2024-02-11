@@ -1,3 +1,3 @@
-token  =  "t1.9euelZqczMqVx5rl9PcvNQBS-e8JGQj03fT3b2N9UfnvCRkI9M3n9euelZrKyM6cmMiPmoyRnY6Zzs6bie_8zef1656VmpKNzZWWjMnLmZHOjM6Zy86c7_3F656VmsrIzpyYyI-ajJGdjpnOzpuJ.ms0_QreMFZpF-wau6ztxUztUp7zmOhSBAYor8wnxMRu1duD5SV6O7Qy8N2E5M7-MnS6X8y2IpMfpora1DPdoAw"
-cloud_id  = "b1gri9i35rd1ghpm0kjd"
-folder_id = "b1gfs13q5qak7jlkueuf"
+token  =  ""
+cloud_id  = ""
+folder_id = ""
