@@ -1,0 +1,55 @@
+ 1  microk8s status --wait-ready
+    2  microk8s config
+    3  alias mk='microk8s kubectl'
+    4  mk get nodes
+    5  mk get service
+    6  microk8s status --wait-ready
+    7  microk8s enable dashboard
+    8  microk8s status --wait-ready
+    9  microk8s dashboard-proxy
+   10  microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+   11  sudo microk8s.refresh-certs --cert ca.crt
+   12  microk8s dashboard-proxy
+   13  sudo mkdir -p /etc/opt/chrome/policies/managed
+   14  nano /etc/opt/chrome/policies/managed/mintlsver.json
+   15  sudo nano /etc/opt/chrome/policies/managed/mintlsver.json
+   16  microk8s dashboard-proxy
+   17  sudo nano /var/snap/microk8s/current/certs/csr.conf.template
+   18  sudo microk8s refresh-certs --cert front-proxy-client.crt
+   19  ${KUBE_VERSION}
+   20  echo ${KUBE_VERSION}
+   21  echo $KUBE_VERSION
+   22  microk8s --version
+   23  microk8s version
+   24  curl -LO https://dl.k8s.io/release/v1.31.1/bin/linux/amd64/kubectl
+   25  chmod +x ./kubectl
+   26  sudo mv ./kubectl /usr/local/bin/kubectl
+   27  kubectl version --client
+   28  kubectl cluster-info
+   29  kubectl version && kubectl get nodes,namespaces
+   30  head $HOME/.kube/config
+   31  echo $HOME
+   38  install -o root -g root -m 0755 kubectl /usr/bin/kubectl
+   39  curl -LO https://dl.k8s.io/release/v${KUBE_VERSION}/bin/linux/amd64/kubectl
+   40  install -o root -g root -m 0755 kubectl /usr/bin/kubectl
+   41  sudo install -o root -g root -m 0755 kubectl /usr/bin/kubectl
+   42  microk8s config > $HOME/.kube/config
+   43  cat /.kube/config
+   44  cat $HOME/.kube/config
+   45  kubectl version && kubectl get nodes,namespaces
+   46  echo 'alias k=kubectl' >>~/.bashrc
+   47  echo 'source <(kubectl completion bash)' >>~/.bashrc
+   48  echo 'complete -F __start_kubectl k' >>~/.bashrc
+   49* source ~/.bashrc |
+   51  history | grep port
+   52  k port-forward -n kube-system service/kubernetes-dashboard 10443:443
+   53  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 89.169.142.85
+   54  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+   55  sudo microk8s config
+   56  kubectl config get-contexts
+   57  kubectl config use-context microk8s
+   58  kubectl get nodes
+   59  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+   60  token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+   61  microk8s kubectl -n kube-system describe secret $token
+   62  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
