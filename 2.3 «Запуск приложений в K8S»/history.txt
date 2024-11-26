@@ -1,0 +1,323 @@
+    1  microk8s status --wait-ready
+    2  microk8s config
+    3  alias mk='microk8s kubectl'
+    4  mk get nodes
+    5  mk get service
+    6  microk8s status --wait-ready
+    7  microk8s enable dashboard
+    8  microk8s status --wait-ready
+    9  microk8s dashboard-proxy
+   10  microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+   11  sudo microk8s.refresh-certs --cert ca.crt
+   12  microk8s dashboard-proxy
+   13  sudo mkdir -p /etc/opt/chrome/policies/managed
+   14  nano /etc/opt/chrome/policies/managed/mintlsver.json
+   15  sudo nano /etc/opt/chrome/policies/managed/mintlsver.json
+   16  microk8s dashboard-proxy
+   17  sudo nano /var/snap/microk8s/current/certs/csr.conf.template
+   18  sudo microk8s refresh-certs --cert front-proxy-client.crt
+   19  ${KUBE_VERSION}
+   20  echo ${KUBE_VERSION}
+   21  echo $KUBE_VERSION
+   22  microk8s --version
+   23  microk8s version
+   24  curl -LO https://dl.k8s.io/release/v1.31.1/bin/linux/amd64/kubectl
+   25  chmod +x ./kubectl
+   26  sudo mv ./kubectl /usr/local/bin/kubectl
+   27  kubectl version --client
+   28  kubectl cluster-info
+   29  kubectl version && kubectl get nodes,namespaces
+   30  head $HOME/.kube/config
+   31  echo $HOME
+   32  ll /usr/local/bin/kubectl
+   33  ll ./kubectl
+   34  ll./
+   35  ll ./
+   36  ll ./kube
+   37  ll .kube
+   38  install -o root -g root -m 0755 kubectl /usr/bin/kubectl
+   39  curl -LO https://dl.k8s.io/release/v${KUBE_VERSION}/bin/linux/amd64/kubectl
+   40  install -o root -g root -m 0755 kubectl /usr/bin/kubectl
+   41  sudo install -o root -g root -m 0755 kubectl /usr/bin/kubectl
+   42  microk8s config > $HOME/.kube/config
+   43  cat /.kube/config
+   44  cat $HOME/.kube/config
+   45  kubectl version && kubectl get nodes,namespaces
+   46  echo 'alias k=kubectl' >>~/.bashrc
+   47  echo 'source <(kubectl completion bash)' >>~/.bashrc
+   48  echo 'complete -F __start_kubectl k' >>~/.bashrc
+   49  source ~/.bashrc |
+   50  history
+   51  history | grep port
+   52  k port-forward -n kube-system service/kubernetes-dashboard 10443:443
+   53  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 89.169.142.85
+   54  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+   55  sudo microk8s config
+   56  kubectl config get-contexts
+   57  kubectl config use-context microk8s
+   58  kubectl get nodes
+   59  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+   60  token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+   61  microk8s kubectl -n kube-system describe secret $token
+   62  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+   63  history
+   64  ll
+   65  sudo -i
+   66  sudo snap install microk8s --classic --channel=1.31
+   67  sudo usermod -a -G microk8s $USER
+   68  mkdir -p ~/.kube
+   69  chmod 0700 ~/.kube
+   70  su - $USER
+   71  echo $USER
+   72  sudo -i
+   73  passwd
+   74  openssl passwd -1 -salt xyz yourpass
+   75  openssl passwd -1 -salt xyz admin123
+   76  sudo vi /etc/shadow
+   77  sudo nano /etc/shadow
+   78  su - $USER
+   79  microk8s 
+   80  microk8s stop
+   81  microk8s status --wait-ready
+   82  kubectl version
+   83  history
+   84  cat /var/snap/microk8s/current/certs/csr.conf.template
+   85  kubectl version
+   86  su
+   87  sudo -i
+   88  clear
+   89  microk8s status --wait-ready
+   90  сфе /etc/opt/chrome/policies/managed/mintlsver.json
+   91  cat /etc/opt/chrome/policies/managed/mintlsver.json
+   92  cat /var/snap/microk8s/current/certs/csr.conf.template
+   93  microk8s status --wait-ready
+   94  microk8s start
+   95  microk8s status --wait-ready
+   96  kubectl version && kubectl get nodes,namespaces
+   97  histry
+   98  kubectl get secret -n kube-system
+   99  kubectl describe secret microk8s-dashboard-token -n kube-system
+  100  kubectl get namespaces
+  101  kubectl get secret -n kube-system
+  102  kubectl describe secret microk8s-dashboard-token -n kube-system
+  103  kubectl version && kubectl get nodes,namespaces
+  104  echo 'source <(kubectl completion bash)' >>~/.bashrc
+  105  echo 'complete -F __start_kubectl k' >>~/.bashrc
+  106  source ~/.bashrc
+  107  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+  108  nano /var/snap/microk8s/current/certs/csr.conf.template
+  109  sudo microk8s refresh-certs --cert front-proxy-client.crt
+  110  microk8s config > ~/.kube/config
+  111  sudo microk8s.refresh-certs --cert ca.crt
+  112  mk get service
+  113  alias mk='microk8s kubectl'
+  114  mk get service
+  115  microk8s dashboard-proxy
+  116  microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+  117  sudo nano /etc/opt/chrome/policies/managed/mintlsver.json
+  118  sudo nano /var/snap/microk8s/current/certs/csr.conf.template
+  119  sudo microk8s refresh-certs --cert front-proxy-client.crt
+  120  echo $KUBE_VERSION
+  121  kubectl version && kubectl get nodes,namespaces
+  122  microk8s config > $HOME/.kube/config
+  123  cat /.kube/config
+  124  cat $HOME/.kube/config
+  125  echo 'alias k=kubectl' >>~/.bashrc
+  126  echo 'source <(kubectl completion bash)' >>~/.bashrc
+  127  echo 'complete -F __start_kubectl k' >>~/.bashrc
+  128  token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+  129  microk8s kubectl -n kube-system describe secret $token
+  130  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+  131  kubectl help
+  132  cat $HOME/.kube
+  133  cat $HOME/.kube/config
+  134  microk8s config > $HOME/.kube/config
+  135  cat $HOME/.kube/config
+  136  microk8s enable dashboard
+  137  microk8s status --wait-ready
+  138  sudo microk8s.refresh-certs --cert ca.crt
+  139  sudo microk8s.refresh-certs -c
+  140  microk8s.refresh-certs -e server.crt
+  141  microk8s.refresh-certs -e front-proxy-client.crt
+  142  sudo microk8s.refresh-certs -e server.crt
+  143  sudo microk8s.refresh-certs -e front-proxy-client.crt
+  144  microk8s kubectl port-forward --address 0.0.0.0 -n kube-system service/kubernetes-dashboard 10443:443
+  145  clear
+  146  microk8s start
+  147  kubectl version && kubectl get nodes,namespaces
+  148  kubectl get nodes
+  149  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 89.169.129.145
+  150  sudo microk8s config
+  151  kubectl config get-contexts
+  152  kubectl config use-context microk8s
+  153  kubectl get nodes
+  154  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+  155  token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+  156  microk8s kubectl -n kube-system describe secret $token
+  157  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+  158  kubectl version && kubectl get nodes,namespaces
+  159  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:8443 --address 0.0.0.0
+  160  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 89.169.129.145
+  161  microk8s status --wait-ready
+  162  microk8s dashboard-proxy
+  163  microk8s enable dashboard
+  164  microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+  165  microk8s status --wait-ready
+  166  microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+  167  microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+  168  kubectl get nodes
+  169  cat /var/snap/microk8s/current/certs/csr.conf.template
+  170  nano /var/snap/microk8s/current/certs/csr.conf.template
+  171  sudo microk8s refresh-certs --cert front-proxy-client.crt
+  172  ls ~/.kube/
+  173  rm ~/.kube/config 
+  174  microk8s config > ~/.kube/config
+  175  kubectl get nodes
+  176  ssh administrator@89.169.129.145 "cat ~/.kube/config">~/.kube/config
+  177  ssh stitsyuk@89.169.129.145 "cat ~/.kube/config">~/.kube/config
+  178  cat $HOME/.kube/config
+  179  microk8s config > $HOME/.kube/config
+  180  cat $HOME/.kube/config\
+  181  microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+  182  kubectl describe secret microk8s-dashboard-token -n kube-system
+  183  echo $KUBECONFIG
+  184  kubectl port-forward pods/hello-node-66d457cb86-jskwr 81:8080 --address 0.0.0.0
+  185  kubectl port-forward pods/hello-node-66d457cb86-jskwr 9200:8080 --address 0.0.0.0
+  186  kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+  187  kubectl get svc
+  188  kubectl exec pods/hello-node-66d457cb86-jskwr  echo "Hello"
+  189  kubectl exec pods/hello-node-66d457cb86-jskwr echo "Hello"
+  190  kubectl exec -h
+  191  kubectl exec pods/hello-node-66d457cb86-jskwr -- date
+  192  kubectl exec pods/hello-node-66d457cb86-jskwr -- echo "Hello"
+  193  kubectl exec pods/hello-node-66d457cb86-jskwr -- ls
+  194  history
+  195  docker ps
+  196  sudo wget -qO- https://github.com/derailed/k9s/releases/download/v0.22.0/k9s_Linux_x86_64.tar.gz | tar zxvf -  -C /tmp/
+  197  sudo mv /tmp/k9s /usr/local/bin
+  198  k9s
+  199  clear
+  200  kubectl create namespace test
+  201  kubectl get namespaces 
+  202  ls
+  203  cdk
+  204  ls -la
+  205  cat kubectl 
+  206  mkdir minikube_02
+  207  cd minikube_02/
+  208  nano echoserver.yaml
+  209  kubectl apply -f echopod.yaml -n test
+  210  kubectl apply -f echoserver.yaml -n test
+  211  kubectl port-forward -n test echoserver 8080:8443 --address 0.0.0.0
+  212  kubectl get pods -n test
+  213  nano echoservice.yaml
+  214  ls
+  215  kubectl apply -f echoservice.yaml -n test
+  216  kubectl port-forward -n test echoserver 8080:8443 --address 0.0.0.0
+  217  kubectl get pods -n test
+  218  k9s
+  219  kubectl port-forward -n test echoserver 8080:8443 --address 0.0.0.0
+  220  history
+  221  ls
+  222  cd k
+  223  cd minikube_02/
+  224  ls
+  225  cd ./..
+  226  cp minikube_02/ ./minikube_03
+  227  cp -R minikube_02/ ./minikube_03
+  228  ls
+  229  cd minikube_03
+  230  ls
+  231  microk8s status --wait-ready
+  232  nano /etc/opt/chrome/policies/managed/mintlsver.json
+  233  sudo nano /var/snap/microk8s/current/certs/csr.conf.template
+  234  sudo microk8s refresh-certs --cert front-proxy-client.crt
+  235  kubectl version && kubectl get nodes,namespaces
+  236  microk8s config > $HOME/.kube/config
+  237  kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+  238  cd ./..
+  239  cd minikube_02
+  240  ls
+  241  nano echoservice.yaml 
+  242  nano echoserver.yaml 
+  243  k9s
+  244  kubectl apply -f pod.yaml
+  245  kubectl et po -w
+  246  kubectl get po -w
+  247  kubectl apply -f pod.yaml
+  248  kubectl get po -w
+  249  kubectl apply -f pod.yaml
+  250  kube ctl delete po -f pod.yaml
+  251  kubectl delete po -f pod.yaml
+  252  kubectl delete po init --force --grave-period 0
+  253  kubectl delete po init --force --grace-period 0
+  254  kubectl delete po static-web --force --grace-period 0
+  255  kubectl get po -w
+  256  kubectl delete po myapp-pod
+  257  kubectl delete po hello-node-66d457cb86-jskwr
+  258  kubectl apply -f pod.yaml
+  259  kubectl get po -w
+  260  kubectl delete po static-web --force --grace-period 0
+  261  docker 
+  262  sudo apt-get update
+  263  sudo apt-get install ca-certificates curl
+  264  sudo install -m 0755 -d /etc/apt/keyrings
+  265  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  266  sudo chmod a+r /etc/apt/keyrings/docker.asc
+  267  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  268    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  269  sudo apt-get update
+  270  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  271  sudo docker run hello-world
+  272  sudo docker run -it alpine
+  273  dockerps
+  274  docker ps
+  275  sudo docker ps
+  276  kubectl apply -f pod.yaml
+  277  kubectl get po -w
+  278  kubectl descrbe static-web
+  279  kubectl describe static-web
+  280  kubectl describe po static-web
+  281  kubectl apply -f deployment.yaml 
+  282  kubectl get po
+  283  kubectl delete po -f pod.yaml
+  284  kubectl delete -f pod.yaml
+  285  kubectl get po -w
+  286  kubectl get deploy
+  287  kubectl get rs
+  288  kubectl get po
+  289  kubectl apply -f deployment.yaml 
+  290  kubectl get po
+  291  kubectl get deploy
+  292  kubectl get rs
+  293  kubectl apply -f deployment.yaml 
+  294  kubectl get rs
+  295  kubectl get зщ -ц
+  296  kubectl get po -w
+  297  kubectl get deploy
+  298  kubectl get rs
+  299  kubectl apply -f service.yaml 
+  300  kubectl run mycurlpod --image=curlimages/curl -i --tty --rm -- sh
+  301  kubectl get ns
+  302  kubectl run mycurlpod --image=curlimages/curl -i --tty --rm -- sh
+  303  kubectl get po -w
+  304  kubectl apply -f deployment.yaml 
+  305  kubectl get po -w
+  306  kubectl get rs
+  307  kubectl get po -w
+  308  kubectl apply -f demget po -o wide -w
+  309  kubectl -f demget po -o wide -w
+  310  kubectl get po -o wide -w
+  311  kubectl apply -f deployment.yaml 
+  312  kubectl get po -o wide -w
+  313  kubectl apply -f daemonset.yaml 
+  314  kubectl get po -o wide -w
+  315  kubectl get nodes
+  316  history
+
+
+  ---------------------------------------------------
+
+  дз
+
+  

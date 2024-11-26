@@ -74,3 +74,11 @@
 2. https://kubernetes.io/docs/tutorials/hello-minikube/
 3. https://habr.com/ru/companies/flant/articles/333470/
 4. 
+
+
+
+
+sudo nano /var/snap/microk8s/current/certs/csr.conf.template - меняем IP
+sudo microk8s refresh-certs --cert front-proxy-client.crt
+microk8s config > $HOME/.kube/config
+kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
