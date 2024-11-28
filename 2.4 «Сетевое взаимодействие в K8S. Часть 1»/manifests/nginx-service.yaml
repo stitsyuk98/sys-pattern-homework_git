@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service 
+metadata: 
+  labels:
+    app: nginx
+  name: nginx
+  namespace: test 
+spec:  
+  ports:
+  - nodePort: 30000
+    port: 9001
+    protocol: TCP
+    targetPort: 80
+    name: http-port 
+  selector:
+    app: nginx-multitool 
+  type: NodePort

@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:  
+  labels:
+    app: nginx-multitool
+  name: nginx-multitool
+  namespace: test 
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: nginx-multitool 
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-multitool
+    spec:
+      containers:
+      - image: nginx
+        imagePullPolicy: IfNotPresent 
+        name: nginx  
+        ports:
+        - containerPort: 80
+          name: http-port 
+      - image: wbitt/network-multitool
+        imagePullPolicy: IfNotPresent 
+        name: multitool
+        env:
+        - name: HTTP_PORT
+          value: "8080" 
+        ports:
+        - containerPort: 8080
+          name: http-port 
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always  
+      terminationGracePeriodSeconds: 30
