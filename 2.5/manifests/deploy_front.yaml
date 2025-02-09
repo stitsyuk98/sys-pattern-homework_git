@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:  
+  labels:
+    app: frontend-nginx
+  name: frontend-nginx
+  namespace: test 
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: frontend-nginx
+  template:
+    metadata:
+      labels:
+        app: frontend-nginx
+    spec:
+      containers:
+      - image: nginx
+        imagePullPolicy: IfNotPresent 
+        name: nginx
+      dnsPolicy: ClusterFirst
+      terminationGracePeriodSeconds: 30

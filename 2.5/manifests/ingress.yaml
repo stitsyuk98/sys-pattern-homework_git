@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata: 
+  generation: 1
+  name: igateway
+  namespace: test  
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: mysite.com
+    http:
+      paths: 
+      - backend:
+          service:
+            name: nginxservice
+            port: 
+              number: 9001
+        path: /
+        pathType: Prefix 
+      - backend:
+          service:
+            name: backendmultitool
+            port: 
+              number: 9002 
+        path: /api
+        pathType: Prefix 
