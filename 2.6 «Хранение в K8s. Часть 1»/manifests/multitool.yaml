@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:  
+  labels:
+    app: backend-multitool
+  name: backend-multitool
+  namespace: test 
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: backend-multitool
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: backend-multitool
+    spec:
+      containers:
+      - image: wbitt/network-multitool
+        imagePullPolicy: IfNotPresent 
+        name: multitools
+        volumeMounts:
+        - mountPath: /testvolume
+          name: mydir
+      - image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ['sh', '-c', 'mkdir -p /testvolume && while true; do echo "$(date) - Test message" >> /testvolume/success.txt; sleep 5; done']
+        name: busybox-service
+        volumeMounts:
+        - mountPath: /testvolume
+          name: mydir
+      dnsPolicy: ClusterFirst
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: mydir
+        emptyDir: {}
+

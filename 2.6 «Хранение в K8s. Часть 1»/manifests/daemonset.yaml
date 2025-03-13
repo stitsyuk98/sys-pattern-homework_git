@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: test-daemonset
+  namespace: test
+  labels:
+    app: multitool
+spec:
+  selector:
+    matchLabels:
+      name: test-daemonset
+  template:
+    metadata:
+      labels:
+        name: test-daemonset
+    spec:
+      securityContext:
+        runAsUser: 0
+      containers:
+      - name: multitool
+        image: wbitt/network-multitool
+        volumeMounts:
+        - name: syslog
+          mountPath: /var/log/syslog
+          readOnly: true
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: syslog
+        hostPath: 
+          path: /var/log/syslog
+          type: File
