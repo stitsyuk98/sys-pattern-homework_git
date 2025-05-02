@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-multitool
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-multitool
+  template:
+    metadata:
+      labels:
+        app: nginx-multitool
+    spec:
+      containers:
+        # Контейнер Nginx
+        - name: nginx
+          image: nginx:alpine
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: nginx-config
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+            - name: web-content
+              mountPath: /usr/share/nginx/html
+        # Контейнер Multitool (wbitt/network-multitool)
+        - name: multitool
+          image: wbitt/network-multitool
+          ports:
+            - containerPort: 80
+          env:
+            - name: HTTP_PORT
+              value: "80"
+            - name: HTTPS_PORT
+              value: "443"
+            - name: SKIP_FILES_UPDATE  # Добавьте эту переменную
+              value: "true"
+          volumeMounts:
+            - name: web-content
+              mountPath: /usr/share/nginx/html  # Путь для статического контента
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: nginx-config
+        - name: web-content
+          configMap:
+            name: web-content
