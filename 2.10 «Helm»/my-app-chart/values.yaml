@@ -1,0 +1,24 @@
+# Глобальные параметры
+global:
+  namespace: default  # Дефолтный неймспейс
+  imagePullPolicy: IfNotPresent
+
+# Frontend
+frontend:
+  replicaCount: 1
+  image:
+    repository: nginx
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 80
+
+# Backend
+backend:
+  replicaCount: 1
+  image:
+    repository: nginx  # Пример образа (замените на ваш)
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 8080

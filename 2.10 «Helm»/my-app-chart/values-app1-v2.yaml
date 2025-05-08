@@ -1,0 +1,8 @@
+global:
+  namespace: app1
+frontend:
+  image:
+    tag: "1.24"
+backend:
+  image:
+    tag: "1.24"
