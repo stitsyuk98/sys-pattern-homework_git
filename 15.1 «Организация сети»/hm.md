@@ -83,3 +83,7 @@ Resource Terraform:
 wget https://hashicorp-releases.yandexcloud.net/terraform/
 unzip
 export PATH=$PATH:$HOME/terraform_init/terraform
+
+ssh -J <через кого подключаемся> <куда подключаемся>
+ssh -J ubuntu@158.160.116.68 ubuntu@10.10.2.29
+
